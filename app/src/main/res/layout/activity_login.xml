@@ -111,7 +111,10 @@
                         android:text="@={model.password}"
                         android:textColor="@color/black"
                         android:textColorHint="@color/gray6"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:gravity="start|center_vertical"
+                        android:textAlignment="viewStart"
+                        />
                 </LinearLayout>
             </LinearLayout>
 
