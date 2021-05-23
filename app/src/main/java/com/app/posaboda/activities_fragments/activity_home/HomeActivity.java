@@ -321,10 +321,9 @@ public class HomeActivity extends AppCompatActivity {
 
     public void logout() {
 
-        if (userModel==null){
-            preferences.clear(this);
-            navigateToSignInActivity();
-        }
+        preferences.clear(this);
+        navigateToSignInActivity();
+
        /* ProgressDialog dialog = Common.createProgressDialog(this, getString(R.string.wait));
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
