@@ -19,6 +19,7 @@ import com.app.posaboda.activities_fragments.activity_cart.CartActivity;
 import com.app.posaboda.activities_fragments.activity_home.fragments.Fragment_Home;
 import com.app.posaboda.activities_fragments.activity_home.fragments.Fragment_Profile;
 import com.app.posaboda.activities_fragments.activity_home.fragments.Fragment_Sale_Order;
+import com.app.posaboda.activities_fragments.activity_login.LoginActivity;
 import com.app.posaboda.cart_models.ManageCartModel;
 import com.app.posaboda.databinding.ActivityHomeBinding;
 import com.app.posaboda.language.Language;
@@ -321,8 +322,8 @@ public class HomeActivity extends AppCompatActivity {
     public void logout() {
 
         if (userModel==null){
-            finish();
-            return;
+            preferences.clear(this);
+            navigateToSignInActivity();
         }
        /* ProgressDialog dialog = Common.createProgressDialog(this, getString(R.string.wait));
         dialog.setCancelable(false);
@@ -374,6 +375,12 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 });*/
 
+    }
+
+    private void navigateToSignInActivity() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
