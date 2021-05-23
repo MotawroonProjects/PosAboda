@@ -64,6 +64,7 @@ public class Fragment_Profile extends Fragment  {
         binding.setLang(lang);
         binding.setModel(userModel);
 
+        binding.logout.setOnClickListener(v -> activity.logout());
         getUserData();
 
     }
