@@ -443,7 +443,6 @@ public class Fragment_Home extends Fragment {
         if (query.isEmpty()) {
             query = null;
         }
-        Log.e("stok", stock_id+"__"+category_id+"__"+type_id+"__"+brand_id+"__"+query);
 
         if (call!=null){
             call.cancel();

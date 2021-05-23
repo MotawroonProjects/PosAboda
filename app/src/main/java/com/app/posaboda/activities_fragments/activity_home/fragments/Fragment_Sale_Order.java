@@ -98,6 +98,7 @@ public class Fragment_Sale_Order extends Fragment {
                             if (response.body().getStatus() == 200&&response.body()!=null) {
                                 if (response.body().getData().size()>0){
                                     binding.tvNoData.setVisibility(View.GONE);
+                                    list.clear();
                                     list.addAll(response.body().getData());
                                     adapter.notifyDataSetChanged();
                                 }else {

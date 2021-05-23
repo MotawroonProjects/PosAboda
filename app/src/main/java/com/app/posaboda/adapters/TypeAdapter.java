@@ -46,38 +46,31 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.MyHolder> {
         holder.binding.setModel(model);
 
         holder.itemView.setOnClickListener(view -> {
-
-            if (old_pos!=-2){
-                DeptTypeBrandModel model1 = list.get(old_pos);
-                if (old_pos!= holder.getAdapterPosition()){
-                    model1.setSelected(false);
-
-                }else {
-                    if (model1.isSelected()){
-                        model1.setSelected(false);
-
-                    }else {
-                        model1.setSelected(true);
-
-                    }
-                }
-                list.set(old_pos,model1);
-                notifyItemChanged(old_pos);
-
-
-            }
-
             i = holder.getAdapterPosition();
-            DeptTypeBrandModel model2 = list.get(i);
+            if (old_pos!=i&&old_pos!=-2){
 
-            if (i!=old_pos){
-                model2.setSelected(true);
-                list.set(i,model2);
-                notifyItemChanged(i);
-                old_pos =i;
+                DeptTypeBrandModel model1 = list.get(old_pos);
+                model1.setSelected(false);
+                list.set(old_pos, model1);
+
+
             }
-            Log.e("sssss", model.isSelected()+"_");
+
+            DeptTypeBrandModel model2 = list.get(i);
+            if (model2.isSelected()){
+                model2.setSelected(false);
+
+            }else {
+                model2.setSelected(true);
+
+            }
+
+            list.set(i,model2);
+            notifyDataSetChanged();
             fragment_home.setTypeItemData(model2);
+
+            old_pos = i;
+
 
 
 
